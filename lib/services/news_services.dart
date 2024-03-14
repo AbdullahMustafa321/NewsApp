@@ -13,12 +13,7 @@ class NewsService {
       List<dynamic> articles = jsonData['results'];
       List<ArticlesMosdel> articlesList = [];
       for (var article in articles) {
-        ArticlesMosdel articles = ArticlesMosdel(
-          title: article['title'],
-          subtitle: article['description'],
-          image: article['image_url'],
-          url: article['source_url']
-        );
+        ArticlesMosdel articles = ArticlesMosdel.fromJson(article);
         articlesList.add(articles);
       }
       return articlesList;

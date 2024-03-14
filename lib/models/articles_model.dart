@@ -9,4 +9,13 @@ class ArticlesMosdel {
     required this.subtitle,
     required this.image
 });
+
+  factory ArticlesMosdel.fromJson(json){
+    return ArticlesMosdel(
+        title: json['title'],
+        subtitle: json['description'],
+        image: json['image_url'],
+        url: json['source_url']
+    );
+  }
 }
